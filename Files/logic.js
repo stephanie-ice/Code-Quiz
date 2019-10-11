@@ -15,15 +15,22 @@
         }
     }, 1000);
 }
-    setTime ();
+
     
 /*This is my Start Button*/
-
+    var startBtn = document.getElementById("start");
+    var modal = document.querySelector(".modal");
+    var closeButton = document.querySelector(".close-button");
+    
+/*Inside the click event, this is the function to pop-up the modal*/
+    
 /*This is the on click event*/
-
-/*Inside the click event, this calls the function to pop-up the modal*/
-
+    startBtn.onclick = function() {
+        modal.style.display = "block";
 /*Inside the click event, this calls the function to start the Timer decrement*/
+        setTime ();
+    }
+
 
 
 
@@ -44,6 +51,41 @@
 
 /*This is my quiz question array of objects*/
 
+var quizQ1 = {
+    question: "",
+    answers: [],
+    correct: "",
+}
+
+var quizQ2 = {
+    question: "",
+    answers: [],
+    correct: "",
+}
+
+var quizQ3 = {
+    question: "",
+    answers: [],
+    correct: "",
+}
+
+var quizQ4 = {
+    question: "",
+    answers: [],
+    correct: "",
+}
+
+var quizQ5 = {
+    question: "",
+    answers: [],
+    correct: "",
+}
+
+/*This is the logic that creates 4 elements in the modal, */
+
+/*and displays the answers inside of each new element*/
+
+/*and a click event for each element*/
 
 
 
