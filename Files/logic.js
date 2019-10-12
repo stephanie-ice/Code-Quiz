@@ -17,8 +17,10 @@
 }
 
     
-/*This is my Start Button*/
+/*This is my Start Button, Modal, and Close Button inside the modal*/
+/*This is the variable that will grab the start button element*/
     var startBtn = document.getElementById("start");
+/*This is the variable that will grab the modal element*/    
     var modal = document.querySelector(".modal");
     var closeButton = document.querySelector(".close-button");
     
@@ -29,6 +31,7 @@
         modal.style.display = "block";
 /*Inside the click event, this calls the function to start the Timer decrement*/
         setTime ();
+        askQuestion ();
     }
 
 
@@ -36,7 +39,7 @@
 
 /*This is my Quiz Loop logic*/
 
-/*5 modals will pop up in succession, prompted by a click event*/
+/*5 modals will pop up in succession, prompted by the above click event*/
 
 /*When the last modal click event is fired, 
 ---this is the function that closes the modal pop up*/
@@ -51,39 +54,38 @@
 
 /*This is my quiz question array of objects*/
 
-var quizQ1 = {
+var quiz = [{
+    question: "What does JS stand for?",
+    answers: ["JavaScript","JavaScrilla","Jamaican Stiva","Jeremy Stein"],
+    correct: "a",
+},{
     question: "",
     answers: [],
     correct: "",
+}];
+
+var counter = 0;
+
+
+/*This is the logic that creates the question and answers in the modal, */
+var modalDiv = document.getElementById("modalContent")
+var askThis = document.createElement ("p");
+var answersHere = document.createElement ("li")
+/*and displays the question and answers inside of each new element*/
+function askQuestion () {
+    var currentQuestion = quiz[counter];
+    console.log(currentQuestion);
+    debugger;
+    counter++;
+    var textNode = document.createTextNode(currentQuestion.question);
+    askThis.appendChild(textNode);
+    modalDiv.appendChild(askThis);
+
+    console.log ("This is the question text " + askThis);
+    console.log ("This is the array of answers " + answersHere);
+
+    modalDiv.appendChild (answersHere);
 }
-
-var quizQ2 = {
-    question: "",
-    answers: [],
-    correct: "",
-}
-
-var quizQ3 = {
-    question: "",
-    answers: [],
-    correct: "",
-}
-
-var quizQ4 = {
-    question: "",
-    answers: [],
-    correct: "",
-}
-
-var quizQ5 = {
-    question: "",
-    answers: [],
-    correct: "",
-}
-
-/*This is the logic that creates 4 elements in the modal, */
-
-/*and displays the answers inside of each new element*/
 
 /*and a click event for each element*/
 
